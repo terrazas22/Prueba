@@ -23,7 +23,15 @@ jobs:
       - name: Crear configuración de linters
         run: |
           echo '{}' > .eslintrc.json
-          echo '{}' > .stylelintrc.json
+
+          echo '{
+            "rules": {
+              "block-no-empty": true,
+              "color-no-invalid-hex": true,
+              "declaration-block-no-duplicate-properties": true
+            }
+          }' > .stylelintrc.json
+
           echo '{}' > .htmlhintrc
 
       - name: Ejecutar HTMLHint
