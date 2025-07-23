@@ -23,6 +23,13 @@ jobs:
       - name: Crear configuración de linters
         run: |
           echo '{
+            "env": {
+              "browser": true,
+              "es2021": true
+            },
+            "parserOptions": {
+              "ecmaVersion": 12
+            },
             "rules": {
               "no-unused-vars": "warn",
               "no-undef": "error"
